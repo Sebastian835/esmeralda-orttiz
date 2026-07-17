@@ -1,1 +1,1415 @@
-Hola Mundo :)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esmeralda Ortiz Cleaning Services</title>
+  <link rel="icon" href="img/ico.ico" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --teal-deep: #0f6e7d;
+      --teal: #1892a3;
+      --teal-pale: #e4f2f3;
+      --rose-deep: #a9436a;
+      --rose: #c15a80;
+      --rose-pale: #f7e3ea;
+      --cream: #fdfaf6;
+      --ink: #223133;
+      --ink-soft: #5b6b6d;
+      --line: rgba(34, 49, 51, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    .script {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ---------- utility shapes ---------- */
+    .blob-row {
+      position: relative;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    /* ---------- header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(253, 250, 246, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 26px;
+      color: var(--rose-deep);
+    }
+
+    .brand span {
+      color: var(--teal-deep);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      display: block;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: -2px;
+      font-family: 'Work Sans', sans-serif;
+      color: var(--ink-soft);
+    }
+
+    nav.links {
+      display: flex;
+      gap: 34px;
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    nav.links a {
+      position: relative;
+      padding: 4px 0;
+    }
+
+    nav.links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--rose);
+      transition: width .25s ease;
+    }
+
+    nav.links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--teal-deep);
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--rose-deep);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative;
+      padding: 96px 32px 120px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 88% 8%, var(--rose-pale) 0%, transparent 42%),
+        radial-gradient(circle at 6% 90%, var(--teal-pale) 0%, transparent 45%);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose-deep);
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--rose);
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.06;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal-deep);
+    }
+
+    .hero p.lede {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 480px;
+      margin-bottom: 34px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 32px;
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--rose-deep);
+      color: #fff;
+      box-shadow: 0 10px 24px -8px rgba(169, 67, 106, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -8px rgba(169, 67, 106, 0.6);
+    }
+
+    .btn-ghost {
+      border: 1.5px solid var(--teal-deep);
+      color: var(--teal-deep);
+    }
+
+    .btn-ghost:hover {
+      background: var(--teal-deep);
+      color: #fff;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 34px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .trust-item strong {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      color: var(--teal-deep);
+      font-weight: 600;
+    }
+
+    .hero-art {
+      position: relative;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 26px;
+      padding: 10px;
+      box-shadow: 0 30px 60px -20px rgba(15, 110, 125, 0.28);
+      transform: rotate(2deg);
+    }
+
+    .hero-card img {
+      border-radius: 20px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -26px;
+      left: -30px;
+      background: var(--teal-deep);
+      color: #fff;
+      padding: 18px 22px;
+      border-radius: 18px;
+      box-shadow: 0 16px 30px -10px rgba(15, 110, 125, 0.5);
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 600;
+      max-width: 200px;
+      transform: rotate(-3deg);
+    }
+
+    .hero-badge span {
+      display: block;
+      font-size: 28px;
+    }
+
+    /* ---------- section heading pattern ---------- */
+    .section {
+      padding: 100px 32px;
+    }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+
+    .section-head .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 3.4vw, 40px);
+      color: var(--ink);
+    }
+
+    .section-head p {
+      font-size: 16.5px;
+      color: var(--ink-soft);
+      margin-top: 14px;
+      line-height: 1.65;
+    }
+
+    .section-alt {
+      background: var(--teal-deep);
+      color: #fff;
+    }
+
+    .section-alt .section-head p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .section-alt .eyebrow {
+      color: var(--rose-pale);
+    }
+
+    .section-alt .eyebrow::before {
+      background: #fff;
+    }
+
+    /* ---------- about / mission-vision ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-grid p {
+      color: var(--ink-soft);
+      line-height: 1.75;
+      font-size: 15.5px;
+      margin-bottom: 16px;
+    }
+
+    .mv-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 30px;
+      border: 1px solid var(--line);
+      margin-bottom: 20px;
+    }
+
+    .mv-card h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--rose-deep);
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    .mv-card p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* ---------- why choose ---------- */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 20px;
+      padding: 30px 26px;
+    }
+
+    .why-card .num {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      color: var(--rose-pale);
+      opacity: 0.7;
+      margin-bottom: 14px;
+    }
+
+    .why-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.6;
+    }
+
+    /* ---------- services ---------- */
+    .service-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .service-tabs span {
+      padding: 9px 18px;
+      border-radius: 24px;
+      background: var(--teal-pale);
+      color: var(--teal-deep);
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 26px;
+      border: 1px solid var(--line);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 34px -18px rgba(34, 49, 51, 0.25);
+    }
+
+    .service-card .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--rose-deep);
+      font-size: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .service-card ul {
+      list-style: none;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.9;
+    }
+
+    .service-card ul li::before {
+      content: "—";
+      color: var(--rose);
+      margin-right: 8px;
+    }
+
+    /* ---------- action photos ---------- */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .action-grid img {
+      border-radius: 16px;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      box-shadow: 0 14px 26px -14px rgba(15, 110, 125, 0.35);
+    }
+
+    .action-grid div:nth-child(2) {
+      margin-top: 34px;
+    }
+
+    .action-grid div:nth-child(4) {
+      margin-top: 34px;
+    }
+
+    /* ---------- gallery ---------- */
+    .gallery-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 150px;
+      gap: 14px;
+    }
+
+    .gallery-slot {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--teal-pale);
+      grid-column: span 1;
+      grid-row: span 1;
+      box-shadow: 0 14px 26px -16px rgba(15, 110, 125, 0.35);
+    }
+
+    .gallery-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-slot.big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-note {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- testimonial / cta strip ---------- */
+    .cta-strip {
+      background: linear-gradient(120deg, var(--rose-deep), var(--rose));
+      color: #fff;
+      border-radius: 28px;
+      padding: 56px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 0 32px;
+    }
+
+    .cta-strip h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      max-width: 480px;
+    }
+
+    .cta-strip .btn-primary {
+      background: #fff;
+      color: var(--rose-deep);
+      box-shadow: none;
+    }
+
+    .cta-strip .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ---------- contact / footer ---------- */
+    .contact {
+      background: var(--ink);
+      color: #fff;
+      padding: 90px 32px 40px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact h2 {
+      font-size: clamp(26px, 3vw, 36px);
+      margin-bottom: 16px;
+    }
+
+    .contact p.lede {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 15.5px;
+      line-height: 1.65;
+      margin-bottom: 30px;
+      max-width: 420px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border-radius: 12px;
+      padding: 6px;
+      margin: -6px;
+      transition: background .2s ease;
+    }
+
+    a.contact-row:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .contact-row .ic {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--rose-pale);
+    }
+
+    .contact-row div p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 2px;
+    }
+
+    .contact-row div strong {
+      font-size: 15.5px;
+      font-weight: 500;
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 34px;
+    }
+
+    .contact-form h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 13px 14px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid var(--rose);
+      outline-offset: 1px;
+    }
+
+    .contact-form button {
+      width: 100%;
+      background: var(--rose-deep);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14.5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: var(--rose);
+    }
+
+    .map-block {
+      border-radius: 20px;
+      overflow: hidden;
+      height: 100%;
+      min-height: 360px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      filter: grayscale(0.15) contrast(1.05);
+    }
+
+    .foot-bottom {
+      max-width: 1120px;
+      margin: 70px auto 0;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media(max-width:860px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav.links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 16px 24px -18px rgba(34, 49, 51, 0.3);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease;
+      }
+
+      nav.links.open {
+        max-height: 320px;
+      }
+
+      nav.links a {
+        padding: 16px 32px;
+        border-top: 1px solid var(--line);
+      }
+
+      nav.links a::after {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        order: -1;
+        max-width: 340px;
+        margin: 0 auto;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .action-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .action-grid div:nth-child(2),
+      .action-grid div:nth-child(4) {
+        margin-top: 0;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-slot.big {
+        grid-column: span 2;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-strip {
+        flex-direction: column;
+        text-align: center;
+        padding: 44px 28px;
+      }
+    }
+
+    @media(max-width:520px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 20px 90px;
+      }
+
+      .section {
+        padding: 70px 20px;
+      }
+    }
+
+    /* ---------- lightbox ---------- */
+    .action-grid img,
+    .gallery-slot img,
+    .hero-card img {
+      cursor: zoom-in;
+      transition: transform .25s ease, filter .25s ease;
+    }
+
+    .action-grid img:hover,
+    .gallery-slot img:hover,
+    .hero-card img:hover {
+      transform: scale(1.035);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(17, 24, 25, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: min(90vw, 1100px);
+      max-height: 85vh;
+      width: auto;
+      border-radius: 12px;
+      box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.6);
+      transform: scale(0.96);
+      transition: transform .25s ease;
+    }
+
+    .lightbox.open img {
+      transform: scale(1);
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 20px;
+    }
+
+    .lightbox-prev {
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-next {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 13.5px;
+      letter-spacing: 0.04em;
+    }
+
+    @media(max-width:600px) {
+
+      .lightbox-prev,
+      .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .lightbox-prev {
+        left: 8px;
+      }
+
+      .lightbox-next {
+        right: 8px;
+      }
+
+      .lightbox {
+        padding: 40px 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="brand">Esmeralda Ortiz<span>Cleaning Services</span></div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="nav-cta">Get a Free Quote</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Houses · Apartments · Vacant Properties</div>
+        <h1>Clean spaces, <em>fresh starts</em>, every single time.</h1>
+        <p class="lede">Esmeralda Ortiz Cleaning brings five years of professional, reliable and detail-driven cleaning
+          to homeowners, businesses and property managers across the Bay Area.</p>
+        <div class="btn-row">
+          <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
+          <a href="tel:+12094082304" class="btn btn-ghost">Call (209) 408-2304</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item"><strong>5+</strong>Years of experience</div>
+          <div class="trust-item"><strong>100%</strong>Satisfaction focused</div>
+          <div class="trust-item"><strong>Res.</strong>& commercial care</div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-card">
+          <img src="img/hero.png" alt="Bright, freshly cleaned home interior">
+        </div>
+        <div class="hero-badge">Trusted team<span>on every job</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Who We Are</div>
+        <h2>Care and attention to detail, in every room we touch.</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>At Esmeralda Ortiz Cleaning, we believe a clean environment creates healthier, happier and more productive
+            lives. Led by Esmeralda Ortiz, our company has proudly served homeowners, businesses and property managers
+            with dependable cleaning services built on professionalism, integrity and attention to detail.</p>
+          <p>For the past five years, we've been dedicated to personalized cleaning solutions that exceed expectations —
+            whether it's routine maintenance, deep cleaning, move-in or move-out cleaning, or commercial cleaning. Every
+            project gets the same care and commitment to quality.</p>
+        </div>
+        <div>
+          <div class="mv-card">
+            <h3>Mission</h3>
+            <p>To provide professional cleaning services that create healthier, cleaner and more comfortable
+              environments through quality workmanship, reliability and outstanding customer care.</p>
+          </div>
+          <div class="mv-card">
+            <h3>Vision</h3>
+            <p>To become one of California's most trusted cleaning companies, recognized for exceptional service,
+              professionalism and customer satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The Benefit of Choosing Us</div>
+        <h2>Six reasons clients keep calling us back.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="num">01</div>
+          <h3>Proven experience</h3>
+          <p>Five years of hands-on residential and commercial cleaning work.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">02</div>
+          <h3>Professional & trustworthy</h3>
+          <p>A vetted team that treats every property with respect.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">03</div>
+          <h3>Attention to detail</h3>
+          <p>Nothing gets skipped — from baseboards to fixtures.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">04</div>
+          <h3>Flexible scheduling</h3>
+          <p>We work around your calendar, not the other way around.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">05</div>
+          <h3>Residential & commercial</h3>
+          <p>From single units to full commercial properties.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">06</div>
+          <h3>Customer satisfaction</h3>
+          <p>We're committed to spotless results, every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>A full range of cleaning &amp; maintenance services.</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="icon">✦</div>
+          <h3>Cleaning Services</h3>
+          <ul>
+            <li>Residential cleaning</li>
+            <li>Commercial cleaning</li>
+            <li>Restaurant cleaning</li>
+            <li>Deep cleaning</li>
+            <li>Post-construction cleaning</li>
+            <li>Office cleaning</li>
+            <li>Sanitizing services</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="icon">⚒</div>
+          <h3>Maintenance Services</h3>
+          <ul>
+            <li>General property maintenance</li>
+            <li>Minor repairs</li>
+            <li>Preventive maintenance</li>
+            <li>Commercial property upkeep</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="icon">🏭</div>
+          <h3>Industrial Cleaning</h3>
+          <ul>
+            <li>Industrial facility cleaning</li>
+            <li>Maintenance of workspaces</li>
+            <li>Cleaning of operational areas</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="icon">💧</div>
+          <h3>Power Washing</h3>
+          <ul>
+            <li>Exterior building washing</li>
+            <li>Driveway cleaning</li>
+            <li>Sidewalk cleaning</li>
+            <li>Parking lot cleaning</li>
+            <li>Commercial exterior cleaning</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="icon">✧</div>
+          <h3>Specialized Cleaning</h3>
+          <ul>
+            <li>Window cleaning</li>
+            <li>Floor cleaning and polishing</li>
+            <li>Carpet cleaning and washing</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="icon">☎</div>
+          <h3>Not sure what you need?</h3>
+          <ul style="margin-bottom:16px;">
+            <li>Free on-site evaluation</li>
+            <li>Custom cleaning plans</li>
+            <li>Transparent communication</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost" style="padding:10px 20px;font-size:13.5px;">Ask us anything</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our Team in Action</div>
+        <h2>Real jobs, real results.</h2>
+        <p>A look at our team on-site — and the spaces we've left spotless for happy clients.</p>
+      </div>
+      <div class="action-grid">
+        <div><img src="img/team1.png" alt="Cleaner at work in a shower"></div>
+        <div><img src="img/team2.png" alt="Sparkling clean kitchen"></div>
+        <div><img src="img/team3.png" alt="Clean bathroom vanity"></div>
+        <div><img src="img/team4.png" alt="Freshly cleaned living space"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="gallery-head">
+        <div class="section-head" style="margin-bottom:0;">
+          <div class="eyebrow">Gallery</div>
+          <h2>Before &amp; after.</h2>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-slot big"><img src="img/1.jpg" alt="Gallery photo 1"></div>
+        <div class="gallery-slot"><img src="img/2.jpg" alt="Gallery photo 2"></div>
+        <div class="gallery-slot"><img src="img/3.jpg" alt="Gallery photo 3"></div>
+        <div class="gallery-slot"><img src="img/4.jpg" alt="Gallery photo 4"></div>
+        <div class="gallery-slot"><img src="img/5.jpg" alt="Gallery photo 5"></div>
+        <div class="gallery-slot"><img src="img/7.jpg" alt="Gallery photo 6"></div>
+        <div class="gallery-slot"><img src="img/8.jpg" alt="Gallery photo 6"></div>
+        <div class="gallery-slot"><img src="img/8.jpg" alt="Gallery photo 6"></div>
+        <div class="gallery-slot"><img src="img/9.jpg" alt="Gallery photo 6"></div>
+        <div class="gallery-slot"><img src="img/10.jpg" alt="Gallery photo 6"></div>
+        <div class="gallery-slot"><img src="img/11.jpg" alt="Gallery photo 6"></div>
+        <div class="gallery-slot"><img src="img/12.jpg" alt="Gallery photo 6"></div>
+        <div class="gallery-slot"><img src="img/13.jpg" alt="Gallery photo 6"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Ready for a spotless space and a fresh start?</h2>
+    <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
+  </div>
+
+  <section class="contact" id="contact" style="margin-top:100px;">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="eyebrow" style="color:var(--rose-pale);">Contact Us</div>
+          <h2>Let's get your space cleaned.</h2>
+          <p class="lede">Reach out for a free, no-obligation quote. We typically respond within one business day.</p>
+          <div class="contact-list">
+            <a class="contact-row" href="tel:+12094082304">
+              <div class="ic">☏</div>
+              <div>
+                <p>Phone — tap to call</p><strong>(209) 408-2304</strong>
+              </div>
+            </a>
+            <a class="contact-row" href="https://wa.me/12094082304" target="_blank" rel="noopener">
+              <div class="ic">💬</div>
+              <div>
+                <p>WhatsApp — tap to chat</p><strong>(209) 408-2304</strong>
+              </div>
+            </a>
+            <a class="contact-row" href="mailto:esmeortiz857@gmail.com">
+              <div class="ic">✉</div>
+              <div>
+                <p>Email — tap to write</p><strong>esmeortiz857@gmail.com</strong>
+              </div>
+            </a>
+            <div class="contact-row">
+              <div class="ic">⌂</div>
+              <div>
+                <p>Address</p><strong>3177 Lone Bluff Way, San Jose, CA 95111</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="map-block">
+          <iframe
+            src="https://maps.google.com/maps?q=3177%20Lone%20Bluff%20Way%2C%20San%20Jose%2C%20CA%2095111&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Esmeralda Ortiz Cleaning Services location map">
+          </iframe>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Esmeralda Ortiz Cleaning Services. All rights reserved.</span>
+        <span>Clean spaces, fresh starts.</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <script>
+    // ---------- mobile menu ----------
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('nav.links');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ---------- lightbox ----------
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    let currentGroup = [];
+    let currentIndex = 0;
+
+    function openLightbox(group, index) {
+      currentGroup = group;
+      currentIndex = index;
+      showImage();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function showImage() {
+      const img = currentGroup[currentIndex];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || '';
+      const showNav = currentGroup.length > 1;
+      lightboxPrev.style.display = showNav ? 'flex' : 'none';
+      lightboxNext.style.display = showNav ? 'flex' : 'none';
+      lightboxCounter.textContent = showNav ? `${currentIndex + 1} / ${currentGroup.length}` : '';
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+      showImage();
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % currentGroup.length;
+      showImage();
+    }
+
+    function registerGroup(selector) {
+      const images = Array.from(document.querySelectorAll(selector));
+      images.forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(images, index));
+      });
+    }
+
+    registerGroup('.hero-card img');
+    registerGroup('.action-grid img');
+    registerGroup('.gallery-slot img');
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrev);
+    lightboxNext.addEventListener('click', showNext);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+
+    // basic touch swipe for mobile
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? showPrev() : showNext();
+      }
+    }, { passive: true });
+  </script>
+
+</body>
+
+</html>
